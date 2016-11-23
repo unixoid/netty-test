@@ -20,10 +20,11 @@
         <sources-plugin-version>3.0.1</sources-plugin-version>
 
         <!-- runtime dependencies -->
-        <camel-version>2.18.0</camel-version>
+        <camel-version>2.19.0-SNAPSHOT</camel-version>
         <commons-lang3-version>3.4</commons-lang3-version>
         <junit-version>4.12</junit-version>
         <lombok-version>1.16.10</lombok-version>
+        <netty-version>4.1.6.Final</netty-version>
         <slf4j-version>1.7.21</slf4j-version>
         <spring-version>4.3.4.RELEASE</spring-version>
     </properties>
@@ -49,6 +50,11 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-netty4</artifactId>
             <version>${camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -151,5 +157,19 @@
             </testResource>
         </testResources>
     </build>
+
+    <repositories>
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Development Snapshot Repository</name>
+            <url>https://repository.apache.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
